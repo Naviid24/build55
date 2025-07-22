@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Gallery - HomeFixPro{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2 class="section-title">Our Work</h2>
+  <div class="row">
+    {% comment %} Replace the static URLs below with dynamic images later {% endcomment %}
+    <div class="col-md-4 mb-4">
+      <img src="{% static 'main/images/kitchen1.jpg' %}" class="img-fluid rounded interactive-tile" alt="Kitchen project">
+    </div>
+    <div class="col-md-4 mb-4">
+      <img src="{% static 'main/images/bathroom1.jpg' %}" class="img-fluid rounded interactive-tile" alt="Bathroom project">
+    </div>
+    <div class="col-md-4 mb-4">
+      <img src="{% static 'main/images/tiling1.jpg' %}" class="img-fluid rounded interactive-tile" alt="Tiling work">
+    </div>
+  </div>
+</div>
+{% endblock %}

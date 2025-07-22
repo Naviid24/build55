@@ -1,5 +1,5 @@
 """
-URL configuration for build55 project.
+URL configuration for app project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from myapp.views import my_app_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('myapp/', my_app_view, name='my_app_view'),
 ]

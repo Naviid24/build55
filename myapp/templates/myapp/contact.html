@@ -1,17 +1,64 @@
 {% extends 'myapp/base.html' %}
-{% block title %}Contact Us - HomeFixPro{% endblock %}
+{% block title %}Contact Us - Build55{% endblock %}
+{% load form_filters %}
 
 {% block content %}
 <div class="container mt-5 mb-5">
-  <h2 class="section-title text-center mb-4">Get in Touch</h2>
-  <div class="row justify-content-center">
-    <div class="col-md-8">
+  <h2 class="section-title mb-4 font-col">Get in Touch</h2>
+  <!-- Introductory message -->
+  <p class="text-center mb-5">
+    We are here to help and answer any questions you may have.<br>
+    Please get in contact via one of the methods below and we will get back to you as soon as possible.
+  </p>
+  <div class="row">
+    
+    <!-- Contact Form -->
+    <div class="col-md-7 shadow-sm bg-light">
       <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Send Message</button>
+
+        <div class="mb-3">
+          <label for="{{ form.name.id_for_label }}" class="form-label">Name</label>
+          {{ form.name|add_class:"form-control" }}
+        </div>
+
+        <div class="mb-3">
+          <label for="{{ form.email.id_for_label }}" class="form-label">Email</label>
+          {{ form.email|add_class:"form-control" }}
+        </div>
+
+        <div class="mb-3">
+          <label for="{{ form.phone.id_for_label }}" class="form-label">Phone</label>
+          {{ form.phone|add_class:"form-control" }}
+        </div>
+
+        <div class="mb-3">
+          <label for="{{ form.message.id_for_label }}" class="form-label">Message</label>
+          {{ form.message|add_class:"form-control" }}
+        </div>
+
+        <button type="submit" class="btn btn-custom">Send Message</button>
       </form>
     </div>
+    <!-- Contact Info -->
+    <div class="col-md-5">
+      <div class="p-2 border rounded shadow-sm bg-light h-100 ">
+        <h5 class="fw-bold mb-5">Contact Details</h5>
+        <p class="mb-4 text-muted">
+          <i class="bi bi-telephone-fill me-2"></i>
+          <strong>Phone:</strong> 07360060000
+        </p>
+        <p class="mb-4 text-muted">
+          <i class="bi bi-envelope-fill me-2"></i>
+          <strong>Email:</strong> build55official@gmail.com
+        </p>
+        <p class="mb-0 text-muted">
+          <i class="bi bi-geo-alt-fill me-2"></i>
+          <strong>Address:</strong> Gosforth, Newcastle
+        </p>
+      </div>
+    </div>
+
   </div>
 </div>
 {% endblock %}

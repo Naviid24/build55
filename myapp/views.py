@@ -1,10 +1,17 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from .forms import ContactForm
 
 
-def my_app_view(request):
-    return HttpResponse("Hello, this is my app view!")
+def home_view(request):
+    return render(request, 'myapp/home.html')
+
+
+def about_view(request):
+    return render(request, 'myapp/about.html')
+
+
+def kitchens_view(request):
+    return render(request, 'myapp/kitchens.html')
 
 
 def contact_view(request):

@@ -1,7 +1,69 @@
 
 /* Custom Font */
-body {
-  font-family: 'Montserrat', sans-serif;
+body,html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Hero Section */
+/* Hero Section */
+.Section_top {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-image: url('/static/images/home-hero.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: change 20s infinite ease-in-out;
+}
+
+.content {
+  text-transform: uppercase;
+}
+
+.content h1 {
+  color: #fff;
+  font-size: 60px;
+  letter-spacing: 15px;
+}
+
+.content h1 span {
+  color: #111;
+}
+
+.content a:hover {
+  background: #034e88;
+  color: #fff;
+}
+
+@keyframes change {
+  0% {
+    background-image: url('/static/images/kitchen1.jpg');
+  }
+  20%{
+    background-image: url('/static/images/kitchen2.jpg');
+  }
+  40%{
+    background-image: url('/static/images/kitchen3.jpg');
+  }
+  60%{
+    background-image: url('/static/images/home-hero.jpg');
+  }
+  80%{
+    background-image: url('/static/images/kitchen2.jpg');
+  }
+  100% {
+    background-image: url('/static/images/kitchen1.jpg');
+  }
 }
 
 .bg-light-navy {
@@ -13,7 +75,7 @@ body {
 }
 
 .tailig-words {
-  font-size: 1.2rem;
+  font-size: 1.9rem;
   color: #ffffff;
 }
 
